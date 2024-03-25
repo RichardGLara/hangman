@@ -1,8 +1,26 @@
 import os
+import time
 
 os.system('cls' if os.name == 'nt' else 'clear')
 player = input(f"\t\tEnter player name: \n\t").title()
 os.system('cls' if os.name == 'nt' else 'clear')
+
+def start():
+    print(f"{player}, WELCOME TO                             ")
+    print("      __________ ________   _____ ____ __________ ")
+    print("     /    /    //        | /     /   //         / ")
+    print("    /    /    //    /    //     /   //   ______/  ")
+    print("   /         //         //         //   /__   /   ")
+    print("  /    /    //    /    //   /     //         /    ")
+    print(" /____/____//____/____//___/_____//_________/     ")
+    print("        _____ _____ ________   _____ ____         ")
+    print("       /     /    //        | /     /   /         ")
+    print("      /     /    //    /    //     /   /          ")
+    print("     /          //         //         /           ")
+    print("    /   /  /   //    /    //   /     /            ")
+    print("   /___/__/___//____/____//___/_____/  (GoHo2024) ")
+    print()
+    time.sleep(3)
 
 
 def escolher_palavra():
@@ -10,18 +28,23 @@ def escolher_palavra():
     os.system('cls' if os.name == 'nt' else 'clear')
     return (secret_word)
 
+
 def jogar_forca():
     palavra = escolher_palavra()
+    tip = input(f"\tEnter a tip: \n\t\t")
     letras_corretas = []
     letras_erradas = []
     tentativas = 6
     
-    print(f"{player}, welcome to Hangman!")
+    start()
     
     while True:
+        
+        os.system('cls' if os.name == 'nt' else 'clear')
         # Exibir a palavra com letras escondidas
         palavra_oculta = ''.join([letra if letra in letras_corretas else '_' for letra in palavra])
         print("Word: " + palavra_oculta)
+        print(f"Tip: {tip}")
         
         # Exibir letras erradas
         if letras_erradas:
@@ -74,4 +97,3 @@ def jogar_forca():
             print("Wrong letter! You have", tentativas, "attempts remaining.")
             
 jogar_forca()
-
