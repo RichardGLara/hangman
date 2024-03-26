@@ -21,6 +21,7 @@ def start():
     print("   /___/__/___//____/____//___/_____/  (GoHo2024) ")
     print()
     time.sleep(3)
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def escolher_palavra():
@@ -40,7 +41,7 @@ def jogar_forca():
     
     while True:
         
-        os.system('cls' if os.name == 'nt' else 'clear')
+        #os.system('cls' if os.name == 'nt' else 'clear')
         # Exibir a palavra com letras escondidas
         palavra_oculta = ''.join([letra if letra in letras_corretas else '_' for letra in palavra])
         print("Word: " + palavra_oculta)
